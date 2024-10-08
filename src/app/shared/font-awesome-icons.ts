@@ -1,5 +1,5 @@
-import { faBan, faBars, faBox, faChampagneGlasses, faChessRook, faCircle, faCircleNotch, faDollarSign, faEarthEurope, faExclamation, faEye, faFire, faHillRockslide, faHouse, faKitchenSet, faLightbulb, faMinus, faMugSaucer, faPersonSkiing, faPlus, faSailboat, faSearch, faSnowflake, faTent, faTowerObservation, faTractor, faTrashCan, faTree, faUmbrellaBeach, faUser, faWater, IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { faEtsy } from "@fortawesome/free-brands-svg-icons"
+import { faBan, faBars, faBed, faBorderAll, faBox, faChampagneGlasses, faChessRook, faChildren, faCircle, faCircleNotch, faDollarSign, faEarthEurope, faExclamation, faEye, faFire, faGroupArrowsRotate, faHillRockslide, faHouse, faHouseChimney, faKitchenSet, faLightbulb, faMinus, faMugSaucer, faPalette, faPeopleGroup, faPeopleRoof, faPersonSkiing, faPlus, faRing, faSailboat, faSearch, faSnowflake, faStar, faTent, faTowerObservation, faTractor, faTrashCan, faTree, faUmbrellaBeach, faUser, faUserFriends, faUserGroup, faUsers, faWater, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faYandex } from "@fortawesome/free-brands-svg-icons"
 
 export const fontAwesomeIcons: IconDefinition[] = [
     faBan,
@@ -33,5 +33,20 @@ export const fontAwesomeIcons: IconDefinition[] = [
     faUmbrellaBeach,
     faUser,
     faWater,
-    faEtsy
+    faBorderAll,
+    faUser,
+    faUserGroup,
+    faRing,
+    faUserFriends,
+    faBed,
+    faUsers,
+    faGroupArrowsRotate,
+    faChildren,
+    faPeopleRoof,
+    faTree,
+    faStar,
+    faHouseChimney,
+    faPalette,
+    faMugSaucer,
+    faYandex
 ];

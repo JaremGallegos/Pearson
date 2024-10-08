@@ -9,43 +9,43 @@ export class CategoryService {
 
   private categories: Category[] = [
     {
-      icon: "eye",
+      icon: "border-all",
       displayName: "Todo",
       technicalName: "TODO",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "user",
       displayName: "Individual",
       technicalName: "INDIVIDUAL",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "user-group",
       displayName: "Doble",
       technicalName: "DOBLE",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "ring",
       displayName: "Matrimonial",
       technicalName: "MATRIMONIAL",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "children",
       displayName: "Twin",
       technicalName: "TWIN",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "users",
       displayName: "Triple",
       technicalName: "TRIPLE",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "people-roof",
       displayName: "Familiar",
       technicalName: "FAMILIAR",
       activated: false
@@ -57,37 +57,37 @@ export class CategoryService {
       activated: false
     },
     {
-      icon: "eye",
+      icon: "star",
       displayName: "Deluxe",
       technicalName: "DELUXE",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "tree",
       displayName: "Eco-Friendly",
       technicalName: "ECO-FRIENDLY",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "house-chimney",
       displayName: "Cabaña",
       technicalName: "CABAÑA",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "palette",
       displayName: "Temática",
       technicalName: "TEMÁTICA",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "mug-saucer",
       displayName: "Con Balcón",
       technicalName: "CON BALCÓN",
       activated: false
     },
     {
-      icon: "eye",
+      icon: "bed",
       displayName: "Loft",
       technicalName: "LOFT",
       activated: false
