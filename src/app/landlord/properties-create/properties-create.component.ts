@@ -7,17 +7,19 @@ import { Router } from '@angular/router';
 import { Step } from './step.model';
 import { CreatedListing, Description, NewListing, NewListingInfo } from '../model/listing.model';
 import { NewListingPicture } from '../model/picture.model';
-import { CategoryStepComponent } from './category-step/category-step.component';
+import { CategoryStepComponent } from './step/category-step/category-step.component';
 import { State } from '../../core/model/state.model';
 import { CategoryName } from '../../layout/navbar/category/category.model';
 import { PrecioVO } from '../model/listing-vo.model';
+import { FooterStepComponent } from "../../shared/footer-step/footer-step.component";
 
 @Component({
   selector: 'app-properties-create',
   standalone: true,
   imports: [
     CategoryStepComponent,
-  ],
+    FooterStepComponent
+],
   templateUrl: './properties-create.component.html',
   styleUrl: './properties-create.component.scss'
 })
