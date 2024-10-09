@@ -16,7 +16,7 @@ export class FooterStepComponent {
   currentStep = input.required<Step>();
   loading = input<boolean>(false);
   isAllStepsValid = input<boolean>(false);
-  labelFinishedBtn = input<string>("Finish");
+  labelFinishedBtn = input<string>("Guardar");
 
   @Output()
   finish = new EventEmitter<boolean>();

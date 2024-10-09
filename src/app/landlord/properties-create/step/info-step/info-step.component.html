@@ -1,0 +1,12 @@
+<app-info-step-control [title]="'Huespedes'" [value]="infos().guests.value"
+                       (valueChange)="onInfoChange($event, 'HUESPEDES')">
+</app-info-step-control>
+<app-info-step-control [title]="'Cuartos'" [value]="infos().bedrooms.value"
+                       (valueChange)="onInfoChange($event, 'CUARTOS')">
+</app-info-step-control>
+<app-info-step-control [title]="'Camas'" [value]="infos().beds.value"
+                       (valueChange)="onInfoChange($event, 'CAMAS')">
+</app-info-step-control>
+<app-info-step-control [title]="'Baños'" [value]="infos().baths.value"
+                       (valueChange)="onInfoChange($event, 'BANOS')">
+</app-info-step-control>

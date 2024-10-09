@@ -1,0 +1,24 @@
+<div class="mb-3">
+    <h1 class="mb-1">Vamos a Darle un Título y una Descripción a tu Casa</h1>
+    <h2 class="mt-0">Los títulos cortos funcionan mejor.</h2>
+
+    <form #formDescription="ngForm" novalidate class="w-full">
+        <input #titleInput="ngModel" name="title" placeholder="Título" required
+               class="w-full p-inputtext-lg" type="text" pInputText
+               [ngModel]="description().title.value" (ngModelChange)="onTitleChange($event)" />
+        @if (titleInput.dirty && titleInput.invalid) {
+            <small id="title-required" class="text-primary">El Título es Requerido</small>
+        } @else {
+            <div class="placeholder-validation"></div>
+        }
+        <textarea #descriptionInput="ngModel" name="description"
+                  class="w-full mt-2" required placeholder="Descripción" rows="5" cols="30"
+                  pInputTextarea [ngModel]="description().description.value"
+                  (ngModelChange)="onDescriptionChange($event)"></textarea>
+        @if (descriptionInput.dirty && descriptionInput.invalid) {
+            <small id="description-required" class="text-primary">La Descripción es requerido</small>
+        } @else {
+            <div class="placeholder-validation"></div>
+        }
+    </form>
+</div>

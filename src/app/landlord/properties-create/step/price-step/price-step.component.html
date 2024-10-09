@@ -1,0 +1,20 @@
+<div class="mb-3">
+    <h1 class="mb-1">Ahora, Ingresemes el Precio</h1>
+    <h2 class="mt-0">Tu puedes cambiar al momento.</h2>
+
+    <form #formPrice="ngForm" novalidate class="w-full">
+        <span class="p-input-icon-left w-full relative">
+            <p class="soles absolute top-0">S/.</p>
+            <input #priceInput="ngModel" name="price" required min="1"
+                   class="w-full p-inputtext-lg" type="number" pInputText
+                   [ngModel]="price().value" (ngModelChange)="onPriceChange($event)" />
+            @if (priceInput.dirty && priceInput.hasError('required')) {
+                <small id="price-required" class="text-primary">El precio es requerido</small>
+            } @else if (priceInput.dirty && priceInput.hasError('min')) {
+                <small id="price-min" class="text-primary">El precio no puede ser negativo</small>
+            } @else {
+                <div class="placeholder-validation"></div>
+            }
+        </span>
+    </form>
+</div>

@@ -1,1 +1,5 @@
-<p>location-step works!</p>
+<div class="mb-3">
+    <h1 class="mb-1">¿El PIN está en el lugar correcto?</h1>
+    <h2 class="mt-0">Tu dirección solo se comparte con los huéspedes después de que hayan hecho una reserva</h2>
+    <app-location-map [location]="location()" (locationChange)="onLocationChange($event)" ></app-location-map>
+</div>

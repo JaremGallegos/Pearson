@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { computed, inject, Injectable, signal, WritableSignal } from '@angular/core';
+import { computed, Injectable, signal, WritableSignal } from '@angular/core';
 import { Country } from './country.model';
 import { State } from '../../../../core/model/state.model';
 import { catchError, map, Observable, of, shareReplay, tap } from 'rxjs';
@@ -8,17 +8,15 @@ import { catchError, map, Observable, of, shareReplay, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class CountryService {
-  http = inject(HttpClient);
-
   private countries$: WritableSignal<State<Array<Country>>> =
     signal(State.Builder<Array<Country>>().forInit());
   countries = computed(() => this.countries$());
 
   private fetchCountry$ = new Observable<Array<Country>>();
-  
-  constructor() {
+
+  constructor(private http: HttpClient) {
     this.initFetchGetAllCountries();
-    this.fetchCountry$.subscribe();  
+    this.fetchCountry$.subscribe();
   }
 
   initFetchGetAllCountries(): void {

@@ -1,1 +1,15 @@
-<p>location-map works!</p>
+<div class="my-4 flex justify-content-center align-items-center">
+    <p-autoComplete
+        [styleClass]="'autocomplete-airbnb'"
+        [panelStyleClass]="'country-panel'"
+        [ngModel]="currentLocation"
+        (onSelect)="onLocationChange($event)"
+        [suggestions]="filteredCountries"
+        (completeMethod)="search($event)"
+        [dropdown]="true"
+        [optionLabel]="formatLabel"
+        [placeholder]="placeholder()">
+    </p-autoComplete>
+</div>
+<div id="map" class="map-location z-0"></div>
+<fa-icon id="marker" class="marker text-primary" [icon]="['fas', 'location-dot']"></fa-icon>
