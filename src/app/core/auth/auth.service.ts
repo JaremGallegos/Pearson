@@ -24,17 +24,17 @@ export class AuthService {
       .subscribe({
         next: user => this.fetchUser$.set(State.Builder<Usuario>().forSuccess(user)),
         error: err => {
-          if(err.status === HttpStatusCode.Unauthorized && this.isAuthenticated()) {
+          if (err.status === HttpStatusCode.Unauthorized && this.isAuthenticated()) {
             this.fetchUser$.set(State.Builder<Usuario>().forSuccess({correoElectronico: this.notConnected}));
           } else {
             this.fetchUser$.set(State.Builder<Usuario>().forError(err));
           }
         }
-      })
+      });
   }
 
   login(): void {
-    location.href = `${location.origin}${this.location.prepareExternalUrl("oauth2/authorization/okta")}`;
+    window.location.href = `${window.location.origin}${this.location.prepareExternalUrl("oauth2/authorization/okta")}`;
   }
 
   logout(): void {
@@ -43,32 +43,29 @@ export class AuthService {
         next: (response: any) => {
           this.fetchUser$.set(State.Builder<Usuario>()
             .forSuccess({correoElectronico: this.notConnected}));
-          location.href = response.logoutUrl
+          window.location.href = response.logoutUrl;
         }
-      })
-  } 
+      });
+  }
 
-  isAuthenticated() : boolean {
-    if(this.fetchUser$().value) {
-      return this.fetchUser$().value!.correoElectronico !== this.notConnected;
-    } else {
-      return false;
-    }
+  isAuthenticated(): boolean {
+    const user = this.fetchUser$().value;
+    return user ? user.correoElectronico !== this.notConnected : false;
   }
 
   fetchHttpUser(forceResync: boolean): Observable<Usuario> {
     const params = new HttpParams().set('forceResync', forceResync);
-    return this.http.get<Usuario>(`${environment.API_URL}/auth/get-autentificacion-usuario`, {params})
+    return this.http.get<Usuario>(`${environment.API_URL}/auth/get-authenticated-user`, { params });
   }
 
-  hasAnyAthority(autoridades: string[] | string): boolean {
-    if(this.fetchUser$().value!.correoElectronico === this.notConnected) {
+  hasAnyAuthority(authorities: string[] | string): boolean {
+    const user = this.fetchUser$().value;
+    if (!user || user.correoElectronico === this.notConnected || !user.autoridades) {
       return false;
     }
-    if(!Array.isArray(autoridades)) {
-      autoridades = [autoridades];
+    if (!Array.isArray(authorities)) {
+      authorities = [authorities];
     }
-    return this.fetchUser$().value!.autoridades!
-      .some((autoridades: string) => autoridades.includes(autoridades))
+    return user.autoridades.some((authority: string) => authorities.includes(authority));
   }
 }

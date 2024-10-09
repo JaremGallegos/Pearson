@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
   currentMenuItems: MenuItem[] | undefined = [];
   toastService = inject(ToastService)
   authService = inject(AuthService)
-  private connectedUser: Usuario = {
+  connectedUser: Usuario = {
     correoElectronico: this.authService.notConnected
   };
   login = () => this.authService.login();
@@ -84,6 +84,6 @@ export class NavbarComponent implements OnInit {
   }
 
   hasToBeLandlord(): boolean {
-    return this.authService.hasAnyAthority("ROL_PROPIETARIO")
+    return this.authService.hasAnyAuthority("ROL_HUESPED")
   }
 }

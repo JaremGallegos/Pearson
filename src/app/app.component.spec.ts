@@ -5,7 +5,8 @@ import { ButtonModule } from 'primeng/button'
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [ButtonModule],
+      declarations: [AppComponent]
     }).compileComponents();
   });
 

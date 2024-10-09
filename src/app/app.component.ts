@@ -18,6 +18,7 @@ import { ToastService } from './layout/toast.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
+  title = 'PearsonSys';
   faIconLibrary: FaIconLibrary = inject(FaIconLibrary);
   isListingView: boolean = true;
   toastService = inject(ToastService);
