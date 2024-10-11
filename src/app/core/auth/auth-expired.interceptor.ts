@@ -7,7 +7,7 @@ export const authExpired: HttpInterceptorFn = (
     req: HttpRequest<unknown>,
     next: HttpHandlerFn
 ) => {
-    const authService: AuthService = inject(AuthService)
+    const authService = inject(AuthService)
     return next(req).pipe(
         tap({
             error: (err: HttpErrorResponse) => {

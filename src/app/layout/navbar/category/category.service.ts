@@ -97,8 +97,6 @@ export class CategoryService {
   private changeCategory$ = new BehaviorSubject<Category>(this.getCategoryByDefault());
   changeCategoryObs = this.changeCategory$.asObservable();
 
-  constructor() { }
-
   changeCategory(category: Category): void {
     this.changeCategory$.next(category);
   }
@@ -107,7 +105,7 @@ export class CategoryService {
     return this.categories;
   }
 
-  getCategoryByDefault(): Category {
+  getCategoryByDefault() {
     return this.categories[0];
   }
 

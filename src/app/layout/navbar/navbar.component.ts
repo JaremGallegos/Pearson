@@ -47,6 +47,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.fetch(false)
+
   }
 
   private fetchMenu(): MenuItem[] {
@@ -54,7 +55,7 @@ export class NavbarComponent implements OnInit {
       return [
         {
           label: "Mis propiedades",
-          routerLink: "landlord/properties",
+          routerLink: " landlord/properties",
           visible: this.hasToBeLandlord(),
         },
         {
@@ -69,7 +70,7 @@ export class NavbarComponent implements OnInit {
         {
           label: "Finalizar Sesión",
           command: this.logout
-        }
+        },
       ]
     } else {
       return [
@@ -82,12 +83,12 @@ export class NavbarComponent implements OnInit {
           label: "Iniciar Sesión",
           command: this.login
         }
-      ];
+      ]
     }
   }
 
   hasToBeLandlord(): boolean {
-    return this.authService.hasAnyAuthority("ROL_HUESPED")
+    return this.authService.hasAnyAuthority("ROL_PROPIETARIO")
   }
 
   openNewListing(): void {

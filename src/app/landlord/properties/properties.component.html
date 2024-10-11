@@ -1,0 +1,24 @@
+<h1>Mis Propiedades</h1>
+<h2>Agregar y eliminar una nueva propiedad</h2>
+
+@if (listings && listings.length > 0 || loadingFetchAll) {
+    <div class="listing-grid">
+        @for (listing of listings; track listing.publicId) {
+            <app-card-listing [listing]="listing"
+                              [cardMode]="'landlord'"
+                              (deleteListing)="onDeleteListing($event)">
+            </app-card-listing>
+        }
+    </div>
+} @else {
+    <div class="flex flex-column justify-content-center align-items-center h-10rem">
+        <h1>No se Encontró Ninguna Propiedad</h1>
+        <div class="text-xl">No ingresó ningún registro de una propiedad</div>
+    </div>
+}
+
+@if(loadingFetchAll) {
+    <div class="flex justify-content-center align-items-center h-15rem">
+        <fa-icon [icon]="'circle-notch'" size="3x" animation="spin" class="ml-2 text-primary"></fa-icon>
+    </div>
+}

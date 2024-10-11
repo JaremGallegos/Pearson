@@ -3,10 +3,9 @@
 .categories {
     -ms-overflow-style: none;
     scrollbar-width: none;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    overflow-x: scroll;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
     gap: 30px;
     background-color: $white;
     .category {

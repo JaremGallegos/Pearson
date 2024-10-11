@@ -1,7 +1,6 @@
-import { CategoryName } from "../../layout/navbar/category/category.model";
-import {NewListingPicture} from "./picture.model";
 import { BanoVO, CamaVO, CuartoVO, DescripcionVO, HuespedVO, PrecioVO, TituloVO } from "./listing-vo.model";
-
+import { CategoryName } from "../../layout/navbar/category/category.model";
+import { NewListingPicture } from "./picture.model";
 
 export interface NewListingInfo  {
     guests: HuespedVO,

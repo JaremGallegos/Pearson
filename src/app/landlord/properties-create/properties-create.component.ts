@@ -143,7 +143,7 @@ export class PropertiesCreateComponent implements OnDestroy {
   onCreateOk(createdListingState: State<CreatedListing>) {
     this.loadingCreation = false;
     this.toastService.send({
-      severity: "success", summary: "Success", detail: "Listado creado correctamente.",
+      severity: "success", summary: "Exito", detail: "Listado creado correctamente.",
     });
     this.dialogDynamicRef.close(createdListingState.value?.publicId);
     this.userService.fetch(true);
